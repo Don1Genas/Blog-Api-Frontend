@@ -1,4 +1,4 @@
-import NavBar from "../layouts/NavBar";
+import NavBar from "../layout/NavBar";
 
 const About = () => {
     return (
