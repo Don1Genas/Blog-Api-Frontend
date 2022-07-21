@@ -18,7 +18,7 @@ The Blog API Frontend also uses a third party Api to bring in a random Giphy on 
 - bootstrap
 
 ### Blog Wireframe
-![Blogapp-wireframe](../blog-api-frontend/src/components/pages/Images/BlogApp-component-tree.jpg)
+![Blogapp-wireframe](../blog-api-frontend/src/components/pages/Images/BlogApp-component-tree.jpg?raw=true)
 
 ### Run Locally
 
