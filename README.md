@@ -24,6 +24,8 @@ The Blog API Frontend also uses a third party Api to bring in a random Giphy on 
 
 git clone (https://github.com/Don1Genas/Blog-Api-Frontend)
 
+netlify (https://dwgblogapp-frontend.netlify.app/)
+
 ### Routes
 
 app.get('/') returns message "WELCOME TO MY BLOG API!!"
