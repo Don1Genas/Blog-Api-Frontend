@@ -8,7 +8,7 @@ const UpdateBlog = (props) => {
  const history = useHistory()
 
  useEffect(() => {
-  axios.get(`http://localhost:4005/blogs/${id}`, {
+  axios.get(`https://dwg-blog-app.herokuapp.com/blogs/${id}`, {
     headers: {
       'x-auth-token': localStorage.getItem("userToken")
     }
@@ -22,7 +22,7 @@ const UpdateBlog = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:4005/blogs/${id}`, blog, {
+    axios.put(`https://dwg-blog-app.herokuapp.com/blogs/${id}`, blog, {
         headers: {
           'x-auth-token': localStorage.getItem("userToken")
         }

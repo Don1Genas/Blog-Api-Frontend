@@ -9,7 +9,7 @@ const CreateBlog = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:4005/blogs', formData, {
+    axios.post('https://dwg-blog-app.herokuapp.com/blogs', formData, {
         headers: {
           'x-auth-token': localStorage.getItem("userToken")
         }

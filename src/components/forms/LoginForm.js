@@ -13,7 +13,7 @@ const LoginForm = (props) => {
         e.preventDefault();
         console.log(formData);
         
-        axios.post('http://localhost:4005/auth', formData)
+        axios.post('https://dwg-blog-app.herokuapp.com/auth', formData)
         .then((res) => {
             console.log(res.data);
             

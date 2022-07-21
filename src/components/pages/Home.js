@@ -10,7 +10,7 @@ const Home = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4005/blogs", {
+      .get("https://dwg-blog-app.herokuapp.com/blogs", {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
@@ -21,7 +21,7 @@ const Home = (props) => {
 
   const handleDelete = (blog) => {
     axios
-      .delete(`http://localhost:4005/blogs/${blog._id}`, {
+      .delete(`https://dwg-blog-app.herokuapp.com/blogs/${blog._id}`, {
         headers: {
           "x-auth-token": localStorage.getItem("userToken"),
         },
