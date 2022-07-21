@@ -17,6 +17,9 @@ The Blog API Frontend also uses a third party Api to bring in a random Giphy on 
 - axios
 - bootstrap
 
+### Blog Wireframe
+wireframe (image.png)
+
 ### Run Locally
 
 git clone (https://github.com/Don1Genas/Blog-Api-Frontend)
