@@ -18,11 +18,13 @@ The Blog API Frontend also uses a third party Api to bring in a random Giphy on 
 - bootstrap
 
 ### Blog Wireframe
-![blogs-components-tree](https://app.diagrams.net/)
+![Blogapp-wireframe](https://app.diagrams.net/)
 
 ### Run Locally
 
 git clone (https://github.com/Don1Genas/Blog-Api-Frontend)
+
+### Deployed
 
 netlify (https://dwgblogapp-frontend.netlify.app/)
 
