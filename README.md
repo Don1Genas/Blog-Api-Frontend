@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# BLOG Api Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Blog-API Frontend project is a full CRUD operation front-end project that connects the back-end using Cors. The project utilizes NodeJS, Express, Mongoose, and MongoDB.
+The user receives a Token at the header that allows the  user to access Public blogs then create, update, and delete a particular blog by ID.
+The Blog API Frontend also uses a third party Api to bring in a random Giphy on the Landing page.
 
-## Available Scripts
+## Installed dependencies
 
-In the project directory, you can run:
+- bcrypt
+- express
+- express-validator
+- mongoose
+- helmet
+- dotenv
+- jsonwebtoken
+- morgan
+- axios
+- bootstrap
 
-### `npm start`
+### Run Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone (https://github.com/Don1Genas/Blog-Api-Frontend)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Routes
 
-### `npm test`
+app.get('/') returns message "WELCOME TO MY BLOG API!!"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#### Auth('/auth') creates Users and Login
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- axios.post('/'): Register Users, RegisterForm.js is used. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- axios.post('/'): Login with username and password only, using LoginForm.js. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### Blog('/blog')
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- router.get('/'): all Public blogs are included, must be logged in and have a token
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- router.post('/'): Creates Blog with blogSchema, username parameter(String) name is needed to post blog
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- router.put('/:id'): Updates blog with id, parameter(String) id is needed to update blog
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- router.get('/:id'): Returns blog associcated to id, parameter(String) id is required to find blog. onlyprivate blogs appear
 
-## Learn More
+- router.delete('/:id): Deletes blog associated with id, need a token for Authorization and parameter(string) id is required to delete blog
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Auth Route Schema:
 
-### Code Splitting
+- username: type: String, required: true,
+- password:type: String, required: true,
+- email:type: String, required: true,
+- birthday: type: Number, 
+- age: type: Number
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### Blog Route Schema:
 
-### Analyzing the Bundle Size
+- username: type: String, require: true,
+- created_by:type: String, required: true,
+- created_at: type: String, required: true,
+- blog_title: type: String, required: true,
+- blog_content: type: String, required: true,
+- private: type: Boolean, default: false
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

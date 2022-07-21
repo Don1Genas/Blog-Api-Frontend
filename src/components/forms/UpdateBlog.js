@@ -33,30 +33,30 @@ const UpdateBlog = (props) => {
     <div>
       {blog && (
         <form onSubmit={handleSubmit}>
-        <label className="form-label" htmlFor="title">
+        <label className="form-label" htmlFor="blog_title">
           Title
         </label>
         <input
           className="form-control"
           type="text"
-          id="title"
-          name="title"
-          value={blog.title}
+          id="blog_title"
+          name="blog_title"
+          value={blog.blog_title}
           onChange={(e) =>
             setBlog({ ...blog, [e.target.id]: e.target.value })
           }
         />
   
         <div className="mb-3">
-          <label className="form-label" htmlFor="details">
+          <label className="form-label" htmlFor="blog_content">
             Details
           </label>
           <input
             className="form-control"
             type="text"
-            id="details"
-            name="details"
-            value={blog.details}
+            id="blog_content"
+            name="blog_content"
+            value={blog.blog_content}
             onChange={(e) =>
               setBlog({ ...blog, [e.target.id]: e.target.value })
             }

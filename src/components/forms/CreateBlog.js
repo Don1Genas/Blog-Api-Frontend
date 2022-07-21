@@ -3,8 +3,8 @@ import axios from 'axios'
 
 const CreateBlog = (props) => {
   const [formData, setFormData] = useState({
-    title: "",
-    details: "",
+    blog_title: "",
+    blog_content: "",
   });
 
   const handleSubmit = (e) => {
@@ -13,19 +13,19 @@ const CreateBlog = (props) => {
         headers: {
           'x-auth-token': localStorage.getItem("userToken")
         }
-      }).then(res => props.setBlog([...props.blogs, res.data]))
+      }).then(res => props.setBlogs([...props.blogs, res.data]))
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className="form-label" htmlFor="title">
-        Title
+      <label className="form-label" htmlFor="blog_title">
+        Blog Title
       </label>
       <input
         className="form-control"
         type="text"
-        id="title"
-        name="title"
+        id="blog_title"
+        name="blog_title"
         value={formData.title}
         onChange={(e) =>
           setFormData({ ...formData, [e.target.id]: e.target.value })
@@ -33,14 +33,14 @@ const CreateBlog = (props) => {
       />
 
       <div className="mb-3">
-        <label className="form-label" htmlFor="details">
+        <label className="form-label" htmlFor="blog_content">
           Blog Content
         </label>
         <input
           className="form-control"
           type="text"
-          id="details"
-          name="details"
+          id="blog_content"
+          name="blog_content"
           value={formData.details}
           onChange={(e) =>
             setFormData({ ...formData, [e.target.id]: e.target.value })
